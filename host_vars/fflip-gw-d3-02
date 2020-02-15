@@ -1,0 +1,37 @@
+vm_id: 7
+server_id: 7
+
+server_besitzer: "Freifunk Lippe"
+hoster: "Netcup"
+
+ffgt_nat_ip: 192.251.226.212/32
+
+ffgt_tun:
+- name: ham02
+  gre_target: 213.128.133.185
+  v4_local: 10.234.11.201/32
+  v4_remote: 10.234.11.156/32
+  v6_local: 2a06:e881:1705:00c9::2/64
+  v6_remote: 2a06:e881:1705:00c9::1/64
+- name: ber01
+  gre_target: 217.197.83.189
+  v4_local: 10.234.11.199/32
+  v4_remote: 10.234.11.124/32
+  v6_local: 2a06:e881:1705:c7::2/64
+  v6_remote: 2a06:e881:1705:c7::1/64
+
+domaenenliste:
+   "03":
+      dhcp_start: 10.88.40.26
+      dhcp_ende: 10.88.47.254
+      server_id: 7
+
+use_wlan_slovenija_tunneldigger: true
+
+tunneldigger:
+  instance_per_domain: true
+  interface: "eth0"
+  max_tunnels: 1024
+  port_base: 20100
+  pmtu_discovery: false
+  tunnel_timeout: 60
