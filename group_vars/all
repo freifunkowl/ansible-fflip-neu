@@ -100,6 +100,8 @@ administratorenteam:
   - "uhlstone"
   - "corny"
   - "wusel"
+  - "bjoerrrn"
+  - "genofire"
 
 bind:
   ffms_zone_type: slave
