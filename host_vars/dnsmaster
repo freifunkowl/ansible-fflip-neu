@@ -1,6 +1,6 @@
-server_besitzer: "FFI"
-server_id: 10
-vm_id: 10
+server_besitzer: "FFLIP"
+server_id: 29
+vm_id: 29
 
 install_lamp: false
 install_osticket: false
@@ -10,4 +10,4 @@ bind:
   ffms_zone_type: master
   ns_name: ns01
   ffms_for_groups:
-    - domaene-06
+- domaene-06

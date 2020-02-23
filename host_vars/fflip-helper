@@ -1,0 +1,8 @@
+server_besitzer: "Freifunk Lippe"
+vm_id: 11
+server_id: 11
+
+bind:
+  ffms_zone_type: master
+  ns_name: ns01
+

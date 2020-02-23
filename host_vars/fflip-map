@@ -1,0 +1,110 @@
+server_besitzer: "Freifunk Lippe"
+vm_id: 12
+server_id: 12
+
+indexconfig:
+  links:
+   - name: "{{freifunk.name}}"
+     link: "https://{{freifunk.domain}}"
+   - name: "{{freifunk.name}} - Forum"
+     link: "https://forum.{{freifunk.domain}}"
+   - name: "{{freifunk.name}} - Firmware Wizard"
+     link: "https://firmware-wizard.{{freifunk.domain}}/"
+
+mapconfig:
+  hopglassServer:
+    purge:
+      max_age: 120 #Wie lang in Tagen soll ein Knoten noch auf der Karte angezeigt werden wenn dieser Offline ist.
+  globalInfos: 
+    - name: "Wochenstatistik"
+      iframe: "https://graphite-stats.freifunk-lippe.de/render/?width=586&height=308&_salt=1448625535.659&title=Gesamtzahl%20Benutzer%20(1%20Woche)&areaMode=first&target=sumSeries(node.*.clients_online.total)&lineMode=staircase&from=-1weeks&fontName=Times&colorList=green&vtitle=Gesamtzahl%20Benutzer%20(1%20Woche)&hideLegend=true"
+      caption: "Bild mit Wochenstatistik"
+    - name: "Monatsstatistik"
+      iframe: "https://graphite-stats.freifunk-lippe.de/render/?width=586&height=308&_salt=1448625625.395&title=Gesamtzahl%20Benutzer%20(30%20Tage)&areaMode=first&target=sumSeries(node.*.clients_online.total)&lineMode=staircase&from=-30days&fontName=Times&colorList=green&vtitle=Gesamtzahl%20Benutzer%20(30%20Tage)&hideLegend=true"
+      caption: "Bild mit Monatsstatistik"
+
+  nodeInfos:
+   - name: "Benutzer (1 Tag)"
+     iframe: "https://graphite-stats.freifunk-lippe.de/render/?width=586&height=308&_salt=1448447649.896&from=-24hours&target=node.{NODE_ID}.clients_online.total&areaAlpha=&fontName=Times&lineWidth=1&hideAxes=false&hideYAxis=false&hideGrid=false&bgcolor=FFFFFF&colorList=green&hideLegend=true&uniqueLegend=true&graphOnly=false&title=Benutzer&drawNullAsZero=false&areaMode=first&lineMode=staircase&tz=Europe%2FBerlin&yUnitSystem=binary&vtitle=Cients"
+     caption: "Knoten {NODE_ID}"
+   - name: "Benutzer (7 Tage)"
+     iframe: "https://graphite-stats.freifunk-lippe.de/render/?width=586&height=308&_salt=1448447649.896&from=-1weeks&target=node.{NODE_ID}.clients_online.total&areaAlpha=&fontName=Times&lineWidth=1&hideAxes=false&hideYAxis=false&hideGrid=false&bgcolor=FFFFFF&colorList=green&hideLegend=true&uniqueLegend=true&graphOnly=false&title=Benutzer&drawNullAsZero=false&areaMode=first&lineMode=staircase&tz=Europe%2FBerlin&yUnitSystem=binary&vtitle=Cients"
+     caption: "Knoten {NODE_ID}"
+   - name: "Traffic - Down (24 Stunden)"
+     iframe: "https://graphite-stats.freifunk-lippe.de/render/?width=586&height=308&_salt=1449038682.944&title=Traffic%20%28Download%20-%2024%20Stunden%29&fontName=Times&connectedLimit=&hideLegend=true&target=node.{NODE_ID}.traffic.node.rx.if_octets&from=-24hours&colorList=red&lineMode=staircase&lineWidth=2&tz=Europe%2FBerlin"
+     caption: "Knoten {NODE_ID}"
+   - name: "Traffic - Up (24 Stunden)"
+     iframe: "https://graphite-stats.freifunk-lippe.de/render/?width=586&height=308&_salt=1449038682.944&title=Traffic%20%28Upload%20-%2024%20Stunden%29&fontName=Times&connectedLimit=&hideLegend=true&target=node.{NODE_ID}.traffic.node.tx.if_octets&from=-24hours&colorList=green&lineMode=staircase&lineWidth=2&tz=Europe%2FBerlin"
+     caption: "Knoten {NODE_ID}"
+  globalMap:
+   map_scale: 1.1
+   map_show_contact: true
+   map_max_age: 14 #Wie lang in Tagen soll ein Knoten als Neu bzw. Verschwunden auf der Karte angezeigt werden?
+   max_goto_zoom: 18
+  communityMap:
+   map_scale: 0.9
+   map_show_contact: true
+   map_max_age: 14 #Wie lang in Tagen soll ein Knoten als Neu bzw. Verschwunden auf der Karte angezeigt werden?
+   max_goto_zoom: 18
+  layers:
+    - name: "OSM Mapnik"
+      url: "https://{{inventory_hostname_short}}.{{freifunk.domain}}/tiles_cache/osm_mapnik/{z}/{x}/{y}.png"
+      config:
+        type: "osm"
+        attribution: "&copy; <a href=\\\"https://www.openstreetmap.org/copyright\\\">OpenStreetMap</a>"
+        maxZoom: 22
+        maxNativeZoom: 19
+    - name: "Luftbilder NRW"
+      url: "https://{{inventory_hostname_short}}.{{freifunk.domain}}/tiles_cache/nrwatlas/geobasis/wms_nw_dop?"
+      config:
+        attribution: "<a href=\\\"http://www.bezreg-koeln.nrw.de/brk_internet/geobasis/luftbilderzeugnisse/digitale_orthophotos/index.html\\\">DOP10</a>, Land NRW (2017), Datenlizenz Deutschland - Namensnennung - Version 2.0 (<a href=\\\"https://www.govdata.de/dl-de/by-2-0\\\">www.govdata.de/dl-de/by-2-0</a>)"
+        maxZoom: 23
+        layers: "nw_dop_rgb"
+        format: "image/jpeg"
+
+node_stats:
+  graphite_target:
+    host: 195.128.100.197
+    port: 2003
+
+nginx_tiles_cache:
+  cache_locations:
+    - name: openstreetmap
+      max_size: 5g
+      path: "/opt/tiles_cache/osm/"
+    - name: nrwatlas
+      path: "/opt/tiles_cache/nrw/"
+      max_size: 5g
+  upstreams:
+    - name: openstreetmap_backend
+      servers:
+      - a.tile.openstreetmap.org
+      - b.tile.openstreetmap.org
+      - c.tile.openstreetmap.org
+  instances:
+    - name: osm_mapnik
+      location: "/tiles_cache/osm_mapnik/"
+      dest_url: "http://openstreetmap_backend/"
+      cache_location_name: openstreetmap
+      valid_time: 14d
+    - name: nrwatlas
+      location: "/tiles_cache/nrwatlas/"
+      dest_url: "https://www.wms.nrw.de/"
+      cache_location_name: nrwatlas
+      valid_time: 90d
+
+
+collectd:
+  collect_dhcp: false
+  collect_fastd: false
+  collect_l2tp: false
+  collect_ipv4ipv6: true
+  collect_sysctl: false
+  collect_bind: false
+  collect_ping: false
+  collect_nginx: true
+  graphite_target:
+    host: 195.128.100.197
+    port: 2003
+
+batman_version: "2019.5"

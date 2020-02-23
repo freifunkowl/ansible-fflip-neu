@@ -1,15 +1,15 @@
 # Server für Hopglass Karten
 [mapserver]
-karte			ipv4=46.4.80.190	ipv6=2a01:4f8:140:616e::83	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+fflip-map		ipv4=195.128.102.63	ipv6=2a03:4000:35:22f:a437:73ff:fe46:407b	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
 
 # Server für Statistiken mittels Graphite und Grafana
 [statistics]
-stats		ansible_ssh_host=185.197.132.146	ansible_ssh_port=22
+fflip-stats		ansible_ssh_host=195.128.100.197	ansible_ssh_port=22
 
 # Server die diverse Dienste anbieten.
 [dienste]
-ticket			ansible_ssh_host=5.9.86.151		ansible_ssh_port=223
-dnsmaster		ansible_ssh_host=176.9.38.163		ansible_ssh_port=22
+fflip-helper		ansible_ssh_host=185.163.117.159	ansible_ssh_port=22
+fflip-services		ansible_ssh_host=5.252.227.5		ansible_ssh_port=22
 
 # Multidomänen-L2TP Gateways mit oder ohne Direktanbindung FFRL
 # 'capacity' im Kommentar gibt die erwünschte relative Auslastung mit Traffic und L2TP-Verbindungen an

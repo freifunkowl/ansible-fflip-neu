@@ -1,5 +1,5 @@
 collectd:
-  collect_dhcp: true
+  collect_dhcp: false
   collect_fastd: false
   collect_l2tp: true
   collect_ipv4ipv6: true
@@ -7,10 +7,10 @@ collectd:
   collect_bind: false
   collect_ping: true
   graphite_target:
-    host: "stats.{{freifunk.domain}}"
+    host: 195.128.100.197
     port: 2003
 
-dhcp_type: "kea"
+dhcp_type: "isc-dhcp"
 
 kea:
   database:
@@ -60,3 +60,6 @@ tunneldigger:
 
 fastd:
   port_base: 21100
+
+batman_version: "2019.5"
+

@@ -1,0 +1,30 @@
+server_besitzer: "Freifunk Lippe"
+hoster: "Netcup"
+
+grafana:
+  nginx:
+    host_name: "fflip-grafana-stats.{{freifunk.domain}}"
+
+graphite:
+  nginx:
+    host_name: "fflip-graphite-stats.{{freifunk.domain}}"
+  relay:
+    method: "consistent-hashing"
+  cache_instances:
+    - name: "a"
+    - name: "b"
+#    - name: "c"
+#    - name: "d"
+  storage_schemas:
+    - name: "node"
+      pattern: "^node\\..*"
+      retentions: "1m:2d,5m:7d,15m:90d,1d:4y"
+    - name: "nodes"
+      pattern: "^nodes\\..*"
+      retentions: "1m:2d,5m:7d,15m:90d,1d:4y"
+    - name: "carbon"
+      pattern: "^carbon\\..*"
+      retentions: "10s:1h,1m:2d,5m:7d,15m:90d,1d:4y"
+    - name: "default"
+      pattern: ".*"
+      retentions: "60s:30d"

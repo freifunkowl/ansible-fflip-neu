@@ -4,21 +4,45 @@ server_id: 6
 server_besitzer: "Freifunk Lippe"
 hoster: "Hetzner"
 
-ffgt_nat_ip: 192.251.226.212/32
+ffrl_nat_ip: 185.66.193.55/32
 
-ffgt_tun:
-- name: ham02
-  gre_target: 213.128.133.185
-  v4_local: 10.234.11.201/32
-  v4_remote: 10.234.11.156/32
-  v6_local: 2a06:e881:1705:00c9::2/64
-  v6_remote: 2a06:e881:1705:00c9::1/64
-- name: ber01
-  gre_target: 217.197.83.189
-  v4_local: 10.234.11.199/32
-  v4_remote: 10.234.11.124/32
-  v6_local: 2a06:e881:1705:c7::2/64
-  v6_remote: 2a06:e881:1705:c7::1/64
+ffrl_tun:
+- name: dus1
+  gre_target: 185.66.193.0
+  v4_local: 100.64.6.53/31
+  v4_remote: 100.64.6.52/31
+  v6_local: 2a03:2260:0:31a::2/64
+  v6_remote: 2a03:2260:0:31a::1/64
+- name: dus2
+  gre_target: 185.66.193.1
+  v4_local: 100.64.6.59/31
+  v4_remote: 100.64.6.58/31
+  v6_local: 2a03:2260:0:31d::2/64
+  v6_remote: 2a03:2260:0:31d::1/64
+- name: fra1
+  gre_target: 185.66.194.0
+  v4_local: 100.64.6.51/31
+  v4_remote: 100.64.6.50/31
+  v6_local: 2a03:2260:0:319::2/64
+  v6_remote: 2a03:2260:0:319::1/64
+- name: fra2
+  gre_target: 185.66.194.1
+  v4_local: 100.64.6.57/31
+  v4_remote: 100.64.6.56/31
+  v6_local: 2a03:2260:0:31c::2/64
+  v6_remote: 2a03:2260:0:31c::1/64
+- name: ber1
+  gre_target: 185.66.195.0
+  v4_local: 100.64.6.49/31
+  v4_remote: 100.64.6.48/31
+  v6_local: 2a03:2260:0:318::2/64
+  v6_remote: 2a03:2260:0:318::1/64
+- name: ber2
+  gre_target: 185.66.195.1
+  v4_local: 100.64.6.55/31
+  v4_remote: 100.64.6.54/31
+  v6_local: 2a03:2260:0:31b::2/64
+  v6_remote: 2a03:2260:0:31b::1/64
 
 domaenenliste:
    "03":
