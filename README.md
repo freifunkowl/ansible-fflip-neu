@@ -1,4 +1,4 @@
-# ansible-ffms
+# ffowl-ansible
 Ansible based server configuration
 
 # how to clone
