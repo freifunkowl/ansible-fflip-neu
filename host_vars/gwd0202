@@ -4,21 +4,21 @@ server_id: 5
 server_besitzer: "Freifunk Lippe"
 hoster: "Netcup"
 
-ffgt_nat_ip: 192.251.226.211/32
+ffgt_nat_ip: 192.251.226.210/32
 
 ffgt_tun:
-- name: ham02
-  gre_target: 213.128.133.185
-  v4_local: 10.234.11.185/32
-  v4_remote: 10.234.11.155/32
-  v6_local: 2a06:e881:1705:b9::2/64
-  v6_remote: 2a06:e881:1705:b9::1/64
 - name: ber01
-  gre_target: 217.197.83.189
-  v4_local: 10.234.11.183/32
-  v4_remote: 10.234.11.123/32
-  v6_local: 2a06:e881:1705:b7::2/64
-  v6_remote: 2a06:e881:1705:b7::1/64
+  gre_target: 2a06:e881:1706:1::1
+  v4_local: 100.10.0.26/30
+  v4_remote: 100.10.0.25/30
+  v6_local: 2001:bf7:1317:206::2/64
+  v6_remote: 2001:bf7:1317:206::1/64
+- name: fra01
+  gre_target: 2a06:e881:1707:1::1
+  v4_local: 100.10.0.30/30
+  v4_remote: 100.10.0.29/30
+  v6_local: 2001:bf7:1317:207::2/64
+  v6_remote: 2001:bf7:1317:207::1/64
 
 domaenenliste:
    "02":

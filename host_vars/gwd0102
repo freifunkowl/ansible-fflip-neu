@@ -7,18 +7,18 @@ hoster: "Netcup"
 ffgt_nat_ip: 192.251.226.210/32
 
 ffgt_tun:
-- name: ham02
-  gre_target: 213.128.133.185
-  v4_local: 10.234.11.169/32
-  v4_remote: 10.234.11.154/32
-  v6_local: 2a06:e881:1705:00a9::2/64
-  v6_remote: 2a06:e881:1705:00a9::1/64
 - name: ber01
-  gre_target: 217.197.83.189
-  v4_local: 10.234.11.167/32
-  v4_remote: 10.234.11.122/32
-  v6_local: 2a06:e881:1705:a7::2/64
-  v6_remote: 2a06:e881:1705:a7::1/64
+  gre_target: 2a06:e881:1706:1::1
+  v4_local: 100.10.0.10/30
+  v4_remote: 100.10.0.9/30
+  v6_local: 2001:bf7:1317:202::2/64
+  v6_remote: 2001:bf7:1317:202::1/64
+- name: fra01
+  gre_target: 2a06:e881:1707:1::1
+  v4_local: 100.10.0.14/30
+  v4_remote: 100.10.0.13/30
+  v6_local: 2001:bf7:1317:203::2/64
+  v6_remote: 2001:bf7:1317:203::1/64
 
 domaenenliste:
    "01":
