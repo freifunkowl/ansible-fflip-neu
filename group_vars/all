@@ -105,8 +105,8 @@ administratorenteam:
 
 bind:
   ffms_zone_type: slave
-#  ffms_zone_masters:
-#    - 88.99.189.29
+  ffms_zone_masters:
+   - 5.252.227.5
 
 logrotate:
   cycle: daily
@@ -120,7 +120,7 @@ freifunk:
   domain: freifunk-lippe.de
 
 bind_zonemaster:
-  server: services.freifunk-lippe.de
+  server: fflipservices.freifunk-lippe.de
   email: info.freifunk-lippe.de
 
 collectd:
@@ -172,3 +172,5 @@ server_besitzer: "Freifunk Lippe"
 
 batman_version: "2019.5"
 
+domains:
+  "freifunk-lippe.de"

@@ -1,0 +1,18 @@
+# Playbook zur Konfiguration aller Servern von services
+
+- hosts: mapserver
+  remote_user: root
+  roles:
+    - { role: hostname, tags: "hostname"}
+    - { role: common, tags: "common"}
+    - { role: tunearpcache, tags: "tunearpcache"}
+    - { role: batman_install, tags: "batman_install"}
+#    - { role: batman_build, tags: "batman_build"}#, when:  "'batman_version' in hostvars[inventory_hostname] and domaenenliste is defined"}
+    - { role: mapserver_interfaces, tags: "mapserver_interfaces"}
+    - { role: yanic, tags: "yanic"}
+#    - { role: mapserver_hopglass-server, tags: "mapserver_hopglass-server"}
+#    - { role: mapserver_hopglass, tags: "mapserver_hopglass"}
+#    - { role: mapserver_nginx, tags: "mapserver_nginx"}
+#    - { role: collectd, tags: "collectd", when: "'collectd' in hostvars[inventory_hostname]" }
+#    - { role: py_respondd, tags: "py_respondd"}
+#    - { role: mapserver_stats, tags: "mapserver_stats"}

@@ -9,12 +9,14 @@ ffgt_nat_ip: 192.251.226.210/32
 ffgt_tun:
 - name: ber01
   gre_target: 2a06:e881:1706:1::1
+  gre_source: 2a03:4000:35:22e:68d9:9aff:fee8:fcac
   v4_local: 100.10.0.26/30
   v4_remote: 100.10.0.25/30
   v6_local: 2001:bf7:1317:206::2/64
   v6_remote: 2001:bf7:1317:206::1/64
 - name: fra01
   gre_target: 2a06:e881:1707:1::1
+  gre_source: 2a03:4000:35:22e:68d9:9aff:fee8:fcac
   v4_local: 100.10.0.30/30
   v4_remote: 100.10.0.29/30
   v6_local: 2001:bf7:1317:207::2/64

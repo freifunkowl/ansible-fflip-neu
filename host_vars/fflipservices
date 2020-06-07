@@ -1,0 +1,11 @@
+server_besitzer: "FFLIP"
+server_id: 29
+vm_id: 29
+
+install_lamp: false
+install_osticket: false
+install_dnsmaster: true
+
+bind:
+  ffms_zone_type: master
+  ns_name: ns01
