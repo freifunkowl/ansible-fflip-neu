@@ -4,23 +4,45 @@ server_id: 11
 server_besitzer: "Freifunk Lippe"
 hoster: "Netcup"
 
-ffgt_nat_ip: 192.251.226.212/32
+ffrl_nat_ip: 185.66.193.54/32
 
-ffgt_tun:
-- name: ber01
-  gre_target: 2a06:e881:1706:1::1
-  gre_source: 2a03:4000:32:137:9455:b8ff:feed:d6e0
-  v4_local: 100.10.0.74/30
-  v4_remote: 100.10.0.73/30
-  v6_local: 2001:bf7:1317:212::2/64
-  v6_remote: 2001:bf7:1317:212::1/64
-- name: fra01
-  gre_target: 2a06:e881:1707:1::1
-  gre_source: 2a03:4000:32:137:9455:b8ff:feed:d6e0
-  v4_local: 100.10.0.78/30
-  v4_remote: 100.10.0.77/30
-  v6_local: 2001:bf7:1317:213::2/64
-  v6_remote: 2001:bf7:1317:213::1/64
+ffrl_tun:
+- name: dus1
+  gre_target: 185.66.193.0
+  v4_local: 100.64.6.41/31
+  v4_remote: 100.64.6.40/31
+  v6_local: 2a03:2260:0:314::2/64
+  v6_remote: 2a03:2260:0:314::1/64
+- name: dus2
+  gre_target: 185.66.193.1
+  v4_local: 100.64.6.47/31
+  v4_remote: 100.64.6.46/31
+  v6_local: 2a03:2260:0:317::2/64
+  v6_remote: 2a03:2260:0:317::1/64
+- name: fra1
+  gre_target: 185.66.194.0
+  v4_local: 100.64.6.39/31
+  v4_remote: 100.64.6.38/31
+  v6_local: 2a03:2260:0:313::2/64
+  v6_remote: 2a03:2260:0:313::1/64
+- name: fra2
+  gre_target: 185.66.194.1
+  v4_local: 100.64.6.45/31
+  v4_remote: 100.64.6.44/31
+  v6_local: 2a03:2260:0:316::2/64
+  v6_remote: 2a03:2260:0:316::1/64
+- name: ber1
+  gre_target: 185.66.195.0
+  v4_local: 100.64.6.37/31
+  v4_remote: 100.64.6.36/31
+  v6_local: 2a03:2260:0:312::2/64
+  v6_remote: 2a03:2260:0:312::1/64
+- name: ber2
+  gre_target: 185.66.195.1
+  v4_local: 100.64.6.43/31
+  v4_remote: 100.64.6.42/31
+  v6_local: 2a03:2260:0:315::2/64
+  v6_remote: 2a03:2260:0:315::1/64
 
 domaenenliste:
    "05":

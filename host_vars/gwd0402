@@ -4,7 +4,7 @@ server_id: 9
 server_besitzer: "Freifunk Lippe"
 hoster: "Netcup"
 
-ffgt_nat_ip: 192.251.226.211/32
+ffgt_nat_ip: 192.251.226.213/32
 
 ffgt_tun:
 - name: ber01

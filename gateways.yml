@@ -13,8 +13,8 @@
     - { role: tunearpcache, tags: "tunearpcache"}
     - { role: ip_forwarding, tags: "ip_forwarding"}
     - { role: iptables, tags: "iptables"}
-#    - { role: gateways_gre_upstream_ffnw, tags: "gateways_gre_upstream_ffnw"}
-    - { role: gateways_gre_upstream_ffgt, tags: "gateways_gre_upstream_ffgt"}
+    - { role: gateways_gre_upstream_ffnw, tags: "gateways_gre_upstream_ffnw"}
+#    - { role: gateways_gre_upstream_ffgt, tags: "gateways_gre_upstream_ffgt"}
     - { role: backbone_gre_intern, tags: "backbone_gre_intern"}
 #    - { role: batman_install, tags: "batman_install", when:  "domaenenliste is defined"}
     - { role: batman_build, tags: "batman_build", when:  "'batman_version' in hostvars[inventory_hostname] and domaenenliste is defined"}
