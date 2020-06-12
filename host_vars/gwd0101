@@ -4,19 +4,19 @@ server_id: 2
 server_besitzer: "Freifunk Lippe"
 hoster: "Hetzner"
 
-ffnw_nat_ip: 185.197.132.162/32
+ffnw_nat_ip: 185.197.132.160/32
 
 ffnw_tun:
 - name: ber1
   gre_target: 185.197.132.7
-  v4_local: 100.100.96.89/31
-  v4_remote: 100.100.96.88/31
+  v4_local: 100.100.96.95/31
+  v4_remote: 100.100.96.94/31
   v6_local: fe80::2/64
   v6_remote: fe80::1/64
 - name: ber2
   gre_target: 185.197.132.8
-  v4_local: 100.100.112.89/31
-  v4_remote: 100.100.112.88/31
+  v4_local: 100.100.112.95/31
+  v4_remote: 100.100.112.94/31
   v6_local: fe80::2/64
   v6_remote: fe80::1/64
 

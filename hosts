@@ -16,14 +16,14 @@ fflipservices		ansible_ssh_host=5.252.227.5		ansible_ssh_port=22
 # 'server' im Kommentar muss angegeben werden, wenn mehrere L2TP-VM auf einem Blech laufen. Der Wert kann frei gewählt werden.
 [gateways]
 gwd0101			ipv4=94.130.58.201	ipv6=2a01:4f8:c0c:7db5::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-gwd0102			ipv4=195.128.102.127	ipv6=2a03:4000:35:22d:a800:afff:fe65:9db	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+#gwd0102			ipv4=195.128.102.127	ipv6=2a03:4000:35:22d:a800:afff:fe65:9db	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
 gwd0201			ipv4=94.130.58.146	ipv6=2a01:4f8:c0c:7ef3::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-gwd0202			ipv4=195.128.103.250	ipv6=2a03:4000:35:22e:68d9:9aff:fee8:fcac	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+#gwd0202			ipv4=195.128.103.250	ipv6=2a03:4000:35:22e:68d9:9aff:fee8:fcac	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
 gwd0301			ipv4=94.130.59.1	ipv6=2a01:4f8:c0c:7db9::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-gwd0302			ipv4=195.128.103.175	ipv6=2a03:4000:35:39e:e8dd:d4ff:feaa:774c	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+#gwd0302			ipv4=195.128.103.175	ipv6=2a03:4000:35:39e:e8dd:d4ff:feaa:774c	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
 gwd0401			ipv4=94.130.58.239	ipv6=2a01:4f8:c0c:7df0::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-gwd0402			ipv4=195.128.102.49	ipv6=2a03:4000:35:39f:44ed:4cff:fee2:f474	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+#gwd0402			ipv4=195.128.102.49	ipv6=2a03:4000:35:39f:44ed:4cff:fee2:f474	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
 gwd0501			ipv4=94.130.59.5	ipv6=2a01:4f8:c0c:7f98::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-gwd0502			ipv4=85.235.65.39	ipv6=2a03:4000:32:137:9455:b8ff:feed:d6e0	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+#gwd0502			ipv4=85.235.65.39	ipv6=2a03:4000:32:137:9455:b8ff:feed:d6e0	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
 gwd0601			ipv4=94.130.58.234	ipv6=2a01:4f8:c0c:7e7b::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-gwd0602			ipv4=195.128.101.109	ipv6=2a03:4000:35:231:d4b2:ecff:fe4f:3272	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+#gwd0602			ipv4=195.128.101.109	ipv6=2a03:4000:35:231:d4b2:ecff:fe4f:3272	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22

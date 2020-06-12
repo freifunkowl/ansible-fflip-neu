@@ -6,7 +6,7 @@ domaenen:
     name: Domaene 01
     community: Freifunk Lippe
     ffv4_network: 10.88.0.0/20
-    ffv6_network: 2a03:2260:2004:de01::/64
+    ffv6_network: 2a0f:b507:ff01:de01::/64
     map_scale: 1.1
     map_show_contact: true
     map_max_age: 30
@@ -16,7 +16,7 @@ domaenen:
     name: Domaene 02
     community: Freifunk Lippe
     ffv4_network: 10.88.16.0/20
-    ffv6_network: 2a03:2260:2004:de02::/64
+    ffv6_network: 2a0f:b507:ff01:de02::/64
     map_scale: 1.1
     map_show_contact: true
     map_max_age: 30
@@ -43,7 +43,7 @@ domaenen:
     name: Domaene 05
     community: Freifunk Lippe
     ffv4_network: 10.88.64.0/20
-    ffv6_network: 2a03:2260:2004:de05::/64
+    ffv6_network: 2a0f:b507:ff01:de05::/64
     map_scale: 1.1
     map_show_contact: true
     map_max_age: 30
@@ -52,7 +52,7 @@ domaenen:
     name: Domaene 06
     community: Freifunk Lippe
     ffv4_network: 10.88.80.0/20
-    ffv6_network: 2a03:2260:2004:de06::/64
+    ffv6_network: 2a0f:b507:ff01:de06::/64
     map_scale: 1.1
     map_show_contact: true
     map_max_age: 30
@@ -87,8 +87,8 @@ ff_network:
   # IPv4 Adressraum
   v4_network: 10.88.0.0/16
   # IPv6 adressraum
+  #v6_network: 2a0f:b507:ff01:de00::/56
   v6_network: 2a03:2260:2004:de00::/56
-
 
 hostname_suffix: ".freifunk-lippe.de"
 

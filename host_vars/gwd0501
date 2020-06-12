@@ -4,7 +4,7 @@ server_id: 10
 server_besitzer: "Freifunk Lippe"
 hoster: "Hetzner"
 
-ffnw_nat_ip: 185.197.132.160/32
+ffnw_nat_ip: 185.197.132.162/32
 
 ffnw_tun:
 - name: ber1
