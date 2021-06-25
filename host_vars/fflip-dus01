@@ -1,0 +1,71 @@
+vm_id: 52
+server_id: 52
+
+server_besitzer: "Freifunk Lippe e. V."
+hoster: "vserver.site"
+modify_motd: true
+bgp_router: true
+bgp_sync_files: true
+weekly_reboot: false
+router_id: 85.220.142.65
+loopback_ipv4: 85.220.142.65
+loopback_ipv6: 2001:bf7:1354::1
+
+ebgp_peers:
+- name: AS48646
+  ipv4src: "185.1.155.35"
+  ipv6src: "2a0c:b641:701:0:a5:213:106:1"
+  ipv4dst: "185.1.155.3"
+  ipv6dst: "2a0c:b641:701::a5:48:646:1"
+  import4: "ANY"
+  import6: "ANY"
+  export4: "AS-FFLIP"
+  export6: "AS-FFLIP"
+  ouras:  213106
+  peeras: 48646
+  exportlimit6: 50
+  exportlimit4: 10
+
+ibgp_peers:
+- name: fflip-ber01
+  label: "ber01"
+  ipv4src: "7.8.9.94"
+  ipv6src: "2a06:e881:1701:5d::2"
+  ipv4dst: "7.8.9.93"
+  ipv6dst: "2a06:e881:1701:5d::1"
+  next_hop_self: true
+
+- name: fflip-fra01
+  label: "fra01"
+  ipv4src: "7.8.10.238"
+  ipv6src: "2a06:e881:1701:1ed::2"
+  ipv4dst: "7.8.10.237"
+  ipv6dst: "2a06:e881:1701:1ed::1"
+  next_hop_self: true
+
+ospf:
+  interfaces:
+  - name: D1lipber01
+    cost: 100
+    options: "type broadcast;"
+
+  - name: D1lipfra01
+    cost: 100
+    options: "type broadcast;"
+
+  - name: br-vms
+    cost: 10
+    options: "type broadcast;"
+
+
+  stub_interfaces:
+  - name: lo
+
+  prefixes:
+    ipv6:
+      - 2001:bf7:1350::/44{44,64}
+    ipv4:
+      - 85.220.142.0/24{24,32}
+      - 192.251.226.0/24{25,32}
+      - 193.26.120.0/24{25,32}
+

@@ -1,11 +1,11 @@
 # ffowl-ansible
-Ansible based server configuration
+Ansible based server configuration for FFOWL
 
 # how to clone
 ```bash
-git clone git@github.com:freifunkowl/ffowl-ansible.git
+git clone https://gitlab.4830.org/ffowl/ffowl-ansible.git
 cd ffowl-ansible
-git submodule update --init roles
+rm -rf roles
+git clone https://github.com/freifunkowl/ffowl-ansible-roles.git roles
+# git submodule update --init roles
 ```
-
-DEPRECATION NOTE: this repo moved to gitlab.freifunk-owl.de

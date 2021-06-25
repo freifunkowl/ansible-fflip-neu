@@ -1,0 +1,49 @@
+vm_id: 31
+server_id: 21
+
+server_besitzer: "Freifunk Lippe e. V."
+hoster: "Freifunk Lippe e. V."
+modify_motd: true
+bgp_router: true
+
+router_id: 85.220.142.34
+
+ebgp_peers:
+- name: fflip-fra01
+  label: "fra01"
+  ipv4src: "85.220.142.34"
+  ipv6src: "2001:bf7:1351::55ff:fedc:8e22"
+  ipv4dst: "85.220.142.2"
+  ipv6dst: "2001:bf7:1352::55ff:fedc:8e02"
+  import4: "AS-FFLIP"
+  import6: "AS-FFLIP"
+  export4: "AS-FFLIP"
+  export6: "AS-FFLIP"
+  reimport_filter6: "AS213106"
+  reimport_filter4: "AS213106"
+  ouras: 65531
+  peeras: 65530
+  exportlimit6: 50
+  exportlimit4: 8
+  multihop: 4
+
+ibgp_peers:
+- name: fflip-fra01
+  label:  "fra01"
+  ipv4src: "85.220.142.34"
+  ipv6src: "2001:bf7:1351::55ff:fedc:8e22"
+  ipv4dst: "85.220.142.2"
+  ipv6dst: "2001:bf7:1352::55ff:fedc:8e02"
+
+ospf:
+  interfaces:
+  - name: tun0
+
+  stub_interfaces:
+  - name: lo
+
+  prefixes:
+    ipv6:
+      - 2001:bf7:1350::/44{44,64}
+    ipv4:
+      - 85.220.142.0/24{24,32}

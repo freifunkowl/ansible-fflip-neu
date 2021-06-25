@@ -1,12 +1,14 @@
 # Globale Variablen für alle Server
 build_tunnels_over_ipv6_if_available: false
+ipv6backbone64prefixstr: "2001:bf7:1350:ffff::"
+ipv4backbone16prefixstr: "198.19."
 
 domaenen:
   "01":
     name: Domaene 01
     community: Freifunk Lippe
     ffv4_network: 10.88.0.0/20
-    ffv6_network: 2001:bf7:131c:101::/64
+    ffv6_network: 2001:bf7:1350:101::/64
     map_scale: 1.1
     map_show_contact: true
     map_max_age: 30
@@ -16,7 +18,7 @@ domaenen:
     name: Domaene 02
     community: Freifunk Lippe
     ffv4_network: 10.88.16.0/20
-    ffv6_network: 2001:bf7:131c:102::/64
+    ffv6_network: 2001:bf7:1350:102::/64
     map_scale: 1.1
     map_show_contact: true
     map_max_age: 30
@@ -25,7 +27,7 @@ domaenen:
     name: Domaene 03
     community: Freifunk Lippe
     ffv4_network: 10.88.32.0/20
-    ffv6_network: 2001:bf7:131c:103::/64
+    ffv6_network: 2001:bf7:1350:103::/64
     map_scale: 1.1
     map_show_contact: true
     map_max_age: 30
@@ -34,7 +36,7 @@ domaenen:
     name: Domaene 04
     community: Freifunk Lippe
     ffv4_network: 10.88.48.0/20
-    ffv6_network: 2001:bf7:131c:104::/64
+    ffv6_network: 2001:bf7:1350:104::/64
     map_scale: 1.1
     map_show_contact: true
     map_max_age: 30
@@ -43,7 +45,7 @@ domaenen:
     name: Domaene 05
     community: Freifunk Lippe
     ffv4_network: 10.88.64.0/20
-    ffv6_network: 2a0f:b507:ff01:de05::/64
+    ffv6_network: 2001:bf7:1350:105::/64
     map_scale: 1.1
     map_show_contact: true
     map_max_age: 30
@@ -52,11 +54,47 @@ domaenen:
     name: Domaene 06
     community: Freifunk Lippe
     ffv4_network: 10.88.80.0/20
-    ffv6_network: 2a0f:b507:ff01:de06::/64
+    ffv6_network: 2001:bf7:1350:106::/64
     map_scale: 1.1
     map_show_contact: true
     map_max_age: 30
     firmware: domaene06/
+  "07":
+    name: Domaene 07
+    community: Freifunk Lippe
+    ffv4_network: 10.88.96.0/20
+    ffv6_network: 2001:bf7:1350:107::/64
+    map_scale: 1.1
+    map_show_contact: true
+    map_max_age: 30
+    firmware: domaene07/
+  "08":
+    name: Domaene 08
+    community: Freifunk Lippe
+    ffv4_network: 10.88.112.0/20
+    ffv6_network: 2001:bf7:1350:108::/64
+    map_scale: 1.1
+    map_show_contact: true
+    map_max_age: 30
+    firmware: domaene08/
+  "09":
+    name: Domaene 09
+    community: Freifunk Lippe
+    ffv4_network: 10.88.128.0/20
+    ffv6_network: 2001:bf7:1350:109::/64
+    map_scale: 1.1
+    map_show_contact: true
+    map_max_age: 30
+    firmware: domaene09/
+  "10":
+    name: Domaene 10
+    community: Freifunk Lippe
+    ffv4_network: 10.88.144.0/20
+    ffv6_network: 2001:bf7:1350:10a::/64
+    map_scale: 1.1
+    map_show_contact: true
+    map_max_age: 30
+    firmware: domaene10/
 
 # Nummer der Routing Tabelle, die auf den Servern verwendet wird
 routing_table: 42
@@ -87,10 +125,7 @@ ff_network:
   # IPv4 Adressraum
   v4_network: 10.88.0.0/16
   # IPv6 adressraum
-  v6_network: 2001:bf7:131c:100::/56
-  #v6_network: 2a03:2260:2004:de00::/56
-
-hostname_suffix: ".freifunk-lippe.de"
+  v6_network: 2001:bf7:1350:100::/56
 
 administratorenteam:
   - "collimas"
@@ -121,7 +156,7 @@ freifunk:
   domain: freifunk-lippe.de
 
 bind_zonemaster:
-  server: fflipservices.freifunk-lippe.de
+  server: services.freifunk-lippe.de
   email: info.freifunk-lippe.de
 
 collectd:
@@ -133,12 +168,12 @@ collectd:
   collect_bind: false
   collect_ping: false
   graphite_target:
-    host: 195.128.100.197
+    host: 45.83.105.49
     port: 2003
 
 graphite:
   graphite_target:
-    host: 195.128.100.197
+    host: 45.83.105.49
     port: 2003
   nginx:
     host_name: "graphite-stats.{{freifunk.domain}}"
@@ -175,3 +210,6 @@ batman_version: "2019.5"
 
 domains:
   "freifunk-lippe.de"
+
+public_dns_ip: 45.136.30.155
+

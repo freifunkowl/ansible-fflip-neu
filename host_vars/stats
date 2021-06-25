@@ -3,11 +3,11 @@ hoster: "Netcup"
 
 grafana:
   nginx:
-    host_name: "fflip-grafana-stats.{{freifunk.domain}}"
+    host_name: "grafana.{{freifunk.domain}}"
 
 graphite:
   nginx:
-    host_name: "fflip-graphite-stats.{{freifunk.domain}}"
+    host_name: "graphite.{{freifunk.domain}}"
   relay:
     method: "consistent-hashing"
   cache_instances:

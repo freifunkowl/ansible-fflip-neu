@@ -1,0 +1,21 @@
+---
+- hosts: router
+  vars_files:
+    - passwords.yml
+  remote_user: root
+  serial: 2
+  roles:
+    - { role: hostname, tags: "hostname"}
+    - { role: common, tags: "common"}
+    - { role: motd, tags: "motd", when: "'modify_motd' in hostvars[inventory_hostname]"}
+    - { role: gateways_kernel, tags: "gateways_kernel"}
+    - { role: net_netfilter, tags: "net_netfilter"}
+    - { role: tunearpcache, tags: "tunearpcache"}
+    - { role: ip_forwarding, tags: "ip_forwarding"}
+    - { role: iptables, tags: "iptables"}
+#    - { role: backbone_gre_intern, tags: "backbone_gre_intern"}
+    - { role: bird, tags: "bird"}
+    - { role: collectd, tags: "collectd"}
+#    - { role: nrpe, tags: "nrpe"}
+    - { role: unattended_upgrades, tags: "unattended_upgrades"}
+#    - { role: pause, tags: "pause" }

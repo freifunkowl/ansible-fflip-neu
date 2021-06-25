@@ -1,0 +1,33 @@
+vm_id: 16
+server_id: 16
+
+server_besitzer: "Freifunk Lippe"
+hoster: "fflip-fra01"
+
+domaenenliste:
+   "05":
+      dhcp_start: 10.88.64.26
+      dhcp_ende: 10.88.68.254
+      server_id: 16
+   "06":
+      dhcp_start: 10.88.80.26
+      dhcp_ende: 10.88.84.254
+      server_id: 16
+      jusprog_dns_ip: 45.132.245.96
+
+ipv6_direkt_ausleiten: true
+ipv4_direkt_ausleiten: true
+
+use_wlan_slovenija_tunneldigger: true
+
+tunneldigger:
+  instance_per_domain: true
+  interface: "eth0"
+  max_tunnels: 1024
+  port_base: 20100
+  pmtu_discovery: false
+  tunnel_timeout: 60
+
+
+
+

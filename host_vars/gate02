@@ -1,25 +1,25 @@
-vm_id: 12
-server_id: 12
+vm_id: 4
+server_id: 4
 
 server_besitzer: "Freifunk Lippe"
-hoster: "Hetzner"
+hoster: "fflip-ber01"
 
 domaenenliste:
-   "06":
-      dhcp_start: 10.88.80.26
-      dhcp_ende: 10.88.87.254
-      server_id: 12
+   "01":
+      dhcp_start: 10.88.5.26
+      dhcp_ende: 10.88.10.254
+      server_id: 4
+
+ipv6_direkt_ausleiten: true
+ipv4_direkt_ausleiten: true
 
 use_wlan_slovenija_tunneldigger: true
 
 tunneldigger:
   instance_per_domain: true
-  interface: "eth0"
+  interface: "ens3"
   max_tunnels: 1024
   port_base: 20100
   pmtu_discovery: false
   tunnel_timeout: 60
-
-
-
 

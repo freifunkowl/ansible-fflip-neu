@@ -1,14 +1,17 @@
-vm_id: 10
-server_id: 10
+vm_id: 19
+server_id: 19
 
 server_besitzer: "Freifunk Lippe"
-hoster: "Hetzner"
+hoster: "fflip-ber01"
 
 domaenenliste:
-   "05":
-      dhcp_start: 10.88.64.26
-      dhcp_ende: 10.88.71.254
-      server_id: 10
+   "07":
+      dhcp_start: 10.88.101.26
+      dhcp_ende: 10.88.106.254
+      server_id: 19
+
+ipv6_direkt_ausleiten: true
+ipv4_direkt_ausleiten: true
 
 use_wlan_slovenija_tunneldigger: true
 

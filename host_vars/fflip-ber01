@@ -1,0 +1,135 @@
+vm_id: 51
+server_id: 51
+
+server_besitzer: "Freifunk Lippe e. V."
+hoster: "IN-Berlin e. V."
+modify_motd: true
+bgp_router: true
+bgp_sync_files: true
+weekly_reboot: false
+router_id: 85.220.142.33
+loopback_ipv4: 85.220.142.33
+loopback_ipv6: 2001:bf7:1352::1
+
+ebgp_peers:
+- name: ffgt-ber01
+  ipv4src: "185.1.74.52"
+  ipv6src: "2001:7f8:a5::21:3106:2"
+  ipv4dst: "185.1.74.16"
+  ipv6dst: "2001:7f8:a5::20:6813:1"
+  import4: "ANY"
+  import6: "ANY"
+  export4: "AS-FFLIP"
+  export6: "AS-FFLIP"
+  reimport_filter6: "AS213106"
+  reimport_filter4: "AS213106"
+  ouras:  213106
+  peeras: 206813
+  exportlimit6: 50
+  exportlimit4: 10
+
+- name: ffgt-fra01
+  ipv4src: "185.1.74.52"
+  ipv6src: "2001:7f8:a5::21:3106:2"
+  ipv4dst: "185.1.74.41"
+  ipv6dst: "2001:7f8:a5::20:6813:2"
+  import4: "ANY"
+  import6: "ANY"
+  export4: "AS-FFLIP"
+  export6: "AS-FFLIP"
+  reimport_filter6: "AS213106"
+  reimport_filter4: "AS213106"
+  ouras:  213106
+  peeras: 206813
+  exportlimit6: 50
+  exportlimit4: 10
+
+- name: cix-ber1
+  ipv4src: "185.1.74.52"
+  ipv6src: "2001:7f8:a5::21:3106:2"
+  ipv4dst: "185.1.74.1"
+  ipv6dst: "2001:7f8:a5::5:7555:1"
+  import4: "ANY"
+  import6: "ANY"
+  export4: "AS-FFLIP"
+  export6: "AS213106"
+  reimport_filter6: "AS213106"
+  reimport_filter4: "AS213106"
+  ouras:  213106
+  peeras: 57555
+  passwd: "haech7Aiyiez3ooW"
+  exportlimit6: 50
+  exportlimit4: 10
+
+- name: cix-ber2
+  ipv4src: "185.1.74.52"
+  ipv6src: "2001:7f8:a5::21:3106:2"
+  ipv4dst: "185.1.74.2"
+  ipv6dst: "2001:7f8:a5::5:7555:2"
+  import4: "ANY"
+  import6: "ANY"
+  export4: "AS-FFLIP"
+  export6: "AS213106"
+  reimport_filter6: "AS213106"
+  reimport_filter4: "AS213106"
+  ouras:  213106
+  peeras: 57555
+  passwd: "haech7Aiyiez3ooW"
+  exportlimit6: 50
+  exportlimit4: 10
+
+ibgp_peers:
+- name: fflip-fra01
+  label:  "fra01"
+  ipv4src: "185.1.74.52"
+  ipv6src: "2001:7f8:a5::21:3106:2"
+  ipv4dst: "185.1.74.51"
+  ipv6dst: "2001:7f8:a5::21:3106:1"
+  next_hop_self: true
+
+- name: fflip-fra01_2
+  label:  "fra01_2"
+  ipv4src: "7.8.9.113"
+  ipv6src: "2a06:e881:1701:71::1"
+  ipv4dst: "7.8.9.114"
+  ipv6dst: "2a06:e881:1701:71::2"
+  next_hop_self: true
+  pref: 90
+
+- name: fflip-dus01
+  label: "dus01"
+  ipv4src: "7.8.9.93"
+  ipv6src: "2a06:e881:1701:5d::1"
+  ipv4dst: "7.8.9.94"
+  ipv6dst: "2a06:e881:1701:5d::2"
+  next_hop_self: true
+
+ospf:
+  interfaces:
+  - name: Tfra01
+    cost: 100
+    options: "type broadcast;"
+
+  - name: D2lipfra01
+    cost: 150
+    options: "type broadcast;"
+
+  - name: D1lipdus01
+    cost: 150
+    options: "type broadcast;"
+
+  - name: br-vms
+    cost: 10
+    options: "type broadcast;"
+
+  stub_interfaces:
+  - name: lo
+
+  prefixes:
+    ipv6:
+      - 2001:bf7:1350::/44{44,64}
+    ipv4:
+      - 85.220.142.0/24{24,32}
+      - 192.251.226.0/24{25,32}
+      - 193.26.120.0/24{25,32}
+

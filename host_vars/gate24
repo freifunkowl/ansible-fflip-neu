@@ -1,0 +1,33 @@
+vm_id: 67
+server_id: 67
+
+server_besitzer: "Freifunk Lippe"
+hoster: "fflip-dus01"
+
+domaenenliste:
+   "09":
+      dhcp_start: 10.88.139.26
+      dhcp_ende: 10.88.143.254
+      server_id: 67
+      jusprog_dns_ip: 45.132.245.96
+   "10":
+      dhcp_start: 10.88.155.26
+      dhcp_ende: 10.88.159.254
+      server_id: 67
+
+ipv6_direkt_ausleiten: true
+ipv4_direkt_ausleiten: true
+
+use_wlan_slovenija_tunneldigger: true
+
+tunneldigger:
+  instance_per_domain: true
+  interface: "eth0"
+  max_tunnels: 1024
+  port_base: 20100
+  pmtu_discovery: false
+  tunnel_timeout: 60
+
+
+
+

@@ -1,29 +1,46 @@
 # Server für Hopglass Karten
 [mapserver]
-knoten			ipv4=195.128.102.63	ipv6=2a03:4000:35:22f:a437:73ff:fe46:407b	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+map		ipv4=45.129.180.213	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
 
 # Server für Statistiken mittels Graphite und Grafana
 [statistics]
-fflipstats		ansible_ssh_host=195.128.100.197	ansible_ssh_port=22
+stats		ipv4=45.83.105.49	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
 
 # Server die diverse Dienste anbieten.
 [dienste]
 helfer		ansible_ssh_host=185.163.117.159	ansible_ssh_port=22
-fflipservices		ansible_ssh_host=5.252.227.5		ansible_ssh_port=22
+services		ansible_ssh_host=88.99.189.29		ansible_ssh_port=22
 
 # Multidomänen-L2TP Gateways mit oder ohne Direktanbindung FFRL
 # 'capacity' im Kommentar gibt die erwünschte relative Auslastung mit Traffic und L2TP-Verbindungen an
 # 'server' im Kommentar muss angegeben werden, wenn mehrere L2TP-VM auf einem Blech laufen. Der Wert kann frei gewählt werden.
 [gateways]
-gwd0101			ipv4=94.130.58.201	ipv6=2a01:4f8:c0c:7db5::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-#gwd0102			ipv4=195.128.102.127	ipv6=2a03:4000:35:22d:a800:afff:fe65:9db	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-gwd0201			ipv4=94.130.58.146	ipv6=2a01:4f8:c0c:7ef3::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-#gwd0202			ipv4=195.128.103.250	ipv6=2a03:4000:35:22e:68d9:9aff:fee8:fcac	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-gwd0301			ipv4=94.130.59.1	ipv6=2a01:4f8:c0c:7db9::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-#gwd0302			ipv4=195.128.103.175	ipv6=2a03:4000:35:39e:e8dd:d4ff:feaa:774c	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-gwd0401			ipv4=94.130.58.239	ipv6=2a01:4f8:c0c:7df0::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-#gwd0402			ipv4=195.128.102.49	ipv6=2a03:4000:35:39f:44ed:4cff:fee2:f474	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-#gwd0501			ipv4=94.130.59.5	ipv6=2a01:4f8:c0c:7f98::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-#gwd0502			ipv4=85.235.65.39	ipv6=2a03:4000:32:137:9455:b8ff:feed:d6e0	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-#gwd0601			ipv4=94.130.58.234	ipv6=2a01:4f8:c0c:7e7b::1			ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
-#gwd0602			ipv4=195.128.101.109	ipv6=2a03:4000:35:231:d4b2:ecff:fe4f:3272	ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate01		ipv4=85.220.142.3	ipv6=2001:bf7:1351::55ff:fedc:8e03		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate02		ipv4=85.220.142.35	ipv6=2001:bf7:1352::55ff:fedc:8e23		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate03		ipv4=85.220.142.4	ipv6=2001:bf7:1351::55ff:fedc:8e04		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate04		ipv4=85.220.142.36	ipv6=2001:bf7:1352::55ff:fedc:8e24		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate05		ipv4=85.220.142.5	ipv6=2001:bf7:1351::55ff:fedc:8e05		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate06		ipv4=85.220.142.37	ipv6=2001:bf7:1352::55ff:fedc:8e25		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate07		ipv4=85.220.142.6	ipv6=2001:bf7:1351::55ff:fedc:8e06		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate08		ipv4=85.220.142.38	ipv6=2001:bf7:1352::55ff:fedc:8e26		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate09		ipv4=85.220.142.7	ipv6=2001:bf7:1351::55ff:fedc:8e07		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate10		ipv4=85.220.142.39	ipv6=2001:bf7:1352::55ff:fedc:8e27		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate11		ipv4=85.220.142.8	ipv6=2001:bf7:1351::55ff:fedc:8e08		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate12		ipv4=85.220.142.40	ipv6=2001:bf7:1352::55ff:fedc:8e28		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate13		ipv4=85.220.142.9	ipv6=2001:bf7:1351::55ff:fedc:8e09		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate14		ipv4=85.220.142.41	ipv6=2001:bf7:1352::55ff:fedc:8e29		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate15		ipv4=85.220.142.10	ipv6=2001:bf7:1351::55ff:fedc:8e0a		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate16		ipv4=85.220.142.42	ipv6=2001:bf7:1352::55ff:fedc:8e2a		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate17		ipv4=85.220.142.66	ipv6=2001:bf7:1354::55ff:fedc:8e42		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate18		ipv4=85.220.142.67	ipv6=2001:bf7:1352::55ff:fedc:8e43		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate19		ipv4=85.220.142.68	ipv6=2001:bf7:1352::55ff:fedc:8e44		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate20		ipv4=85.220.142.69	ipv6=2001:bf7:1352::55ff:fedc:8e45		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate21		ipv4=85.220.142.70	ipv6=2001:bf7:1352::55ff:fedc:8e46		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate22		ipv4=85.220.142.71	ipv6=2001:bf7:1352::55ff:fedc:8e47		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate23		ipv4=85.220.142.72	ipv6=2001:bf7:1352::55ff:fedc:8e48		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+gate24		ipv4=85.220.142.73	ipv6=2001:bf7:1352::55ff:fedc:8e49		ansible_ssh_host="{{ipv4}}"	ansible_ssh_port=22
+
+[router]
+fflip-ber01 ipv4=217.197.91.161  ipv6=2001:67c:1401:2150::1            ansible_ssh_host="{{ipv4}}"    ansible_ssh_port=22
+fflip-fra01 ipv4=194.50.19.47                                          ansible_ssh_host="{{ipv4}}"    ansible_ssh_port=22
+fflip-dus01 ipv4=45.152.125.17                                         ansible_ssh_host="{{ipv4}}"    ansible_ssh_port=22
